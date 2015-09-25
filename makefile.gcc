@@ -5,13 +5,13 @@ RM = rm -f
 CFLAGS = -c -O2 -Wall -D_7ZIP_ST
 
 OBJS = \
-  lib/LzmaUtil.o \
-  lib/Alloc.o \
-  LzFind.o \
-  LzmaDec.o \
-  LzmaEnc.o \
-  7zFile.o \
-  7zStream.o \
+  LzmaUtil.o \
+  liblzma/Alloc.o \
+  liblzma/LzFind.o \
+  liblzma/LzmaDec.o \
+  liblzma/LzmaEnc.o \
+  liblzma/7zFile.o \
+  liblzma/7zStream.o \
 
 
 all: $(PROG)
@@ -22,23 +22,23 @@ $(PROG): $(OBJS)
 LzmaUtil.o: LzmaUtil.c
 	$(CXX) $(CFLAGS) LzmaUtil.c
 
-Alloc.o: ../../Alloc.c
-	$(CXX) $(CFLAGS) ../../Alloc.c
+Alloc.o: liblzma/Alloc.c
+	$(CXX) $(CFLAGS) liblzma/Alloc.c
 
-LzFind.o: ../../LzFind.c
-	$(CXX) $(CFLAGS) ../../LzFind.c
+LzFind.o: liblzma/LzFind.c
+	$(CXX) $(CFLAGS) liblzma/LzFind.c
 
-LzmaDec.o: ../../LzmaDec.c
-	$(CXX) $(CFLAGS) ../../LzmaDec.c
+LzmaDec.o: liblzma/LzmaDec.c
+	$(CXX) $(CFLAGS) liblzma/LzmaDec.c
 
-LzmaEnc.o: ../../LzmaEnc.c
-	$(CXX) $(CFLAGS) ../../LzmaEnc.c
+LzmaEnc.o: liblzma/LzmaEnc.c
+	$(CXX) $(CFLAGS) liblzma/LzmaEnc.c
 
-7zFile.o: ../../7zFile.c
-	$(CXX) $(CFLAGS) ../../7zFile.c
+7zFile.o: liblzma/7zFile.c
+	$(CXX) $(CFLAGS) liblzma/7zFile.c
 
-7zStream.o: ../../7zStream.c
-	$(CXX) $(CFLAGS) ../../7zStream.c
+7zStream.o: liblzma/7zStream.c
+	$(CXX) $(CFLAGS) liblzma/7zStream.c
 
 clean:
 	-$(RM) $(PROG) $(OBJS)

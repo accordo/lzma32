@@ -7,11 +7,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../../Alloc.h"
-#include "../../7zFile.h"
-#include "../../7zVersion.h"
-#include "../../LzmaDec.h"
-#include "../../LzmaEnc.h"
+#include "liblzma/Alloc.h"
+#include "liblzma/7zFile.h"
+#include "liblzma/7zVersion.h"
+#include "liblzma/LzmaDec.h"
+#include "liblzma/LzmaEnc.h"
 
 const char *kCantReadMessage = "Can not read input file";
 const char *kCantWriteMessage = "Can not write output file";
